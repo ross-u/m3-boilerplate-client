@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { useContext, useReducer } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 
 function Navbar() {
@@ -30,12 +30,13 @@ function Navbar() {
           </Link>
         </>
       )}
+
       <div className="profile-img-wrapper">
-        {user &&
+        {user && (
           <Link to="/profile">
             <img className="profile-img" src={user.image} alt="profile" />
           </Link>
-        }
+        )}
       </div>
     </nav>
   );
