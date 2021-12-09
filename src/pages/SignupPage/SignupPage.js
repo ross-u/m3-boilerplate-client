@@ -36,8 +36,9 @@ function SignupPage(props) {
       // If the request is successful navigate to login page
       navigate("/login");
     } catch (error) {
+      console.log(error);
       // If the request resolves with an error, set the error message in the state
-      setErrorMessage("Something went wrong");
+      setErrorMessage(error.response.data.message);
     }
   };
 
